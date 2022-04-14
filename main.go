@@ -57,5 +57,7 @@ func say() {
 }
 
 func main() {
+	log.Printf("before test")
 	go say()
+	log.Printf("after test")
 }
