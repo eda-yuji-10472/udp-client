@@ -22,7 +22,7 @@ import (
 	"time"
 )
 
-func main() {
+func say() {
 	conn, err := net.Dial("udp", "udp-server.eda-test.verification-gcp.colopl.jp.:8080")
 	if err != nil {
 		log.Fatalln(err)
@@ -53,5 +53,11 @@ func main() {
 		}
 
 		log.Printf("Received data: %s", string(recvBuf[:n]))
+	}
+}
+
+func main() {
+	for i := 0; i < 10; i++ {
+		go say()
 	}
 }
