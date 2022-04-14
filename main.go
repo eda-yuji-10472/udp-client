@@ -23,7 +23,7 @@ import (
 )
 
 func say() {
-	conn, err := net.Dial("udp", "udp-server.eda-test.verification-gcp.colopl.jp.:8080")
+	conn, err := net.Dial("udp", "udp-server1.eda-test.verification-gcp.colopl.jp.:8080")
 	if err != nil {
 		log.Fatalln(err)
 		os.Exit(1)
@@ -57,7 +57,7 @@ func say() {
 }
 
 func main() {
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 100; i++ {
 		go say()
 	}
 	time.Sleep(time.Second * 1010)
