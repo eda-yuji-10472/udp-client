@@ -57,7 +57,8 @@ func say() {
 }
 
 func main() {
-	log.Printf("before test")
-	go say()
-	log.Printf("after test")
+	for i := 0; i < 10; i++ {
+		go say()
+	}
+	time.Sleep(time.Second * 1010)
 }
